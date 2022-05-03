@@ -24,16 +24,18 @@ static const char col_gray3[]       = "#bbbbbb";
 static const char col_gray4[]       = "#eeeeee";
 static const char col_cyan[]        = "#005577";
 static const char col_springgreen[] = "#00ff7f";
-static const char col_lavender[]    = "#ffe4e1";
+static const char col_lavender[]    = "#BC8F8F";
+static const char col_eva1_Norm[] 	= "#66007A";
+static const char col_eva1_Sel[] 	= "#2FCB08";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
-	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
-	[SchemeSel]  = { col_gray1, col_lavender, col_lavender },
+	[SchemeNorm] = { col_gray3, col_eva1_Norm, col_eva1_Norm },
+	[SchemeSel]  = { col_gray1, col_eva1_Sel, col_eva1_Sel },
 	[SchemeHid]  = { col_cyan,  col_gray1, col_cyan  },
 };
 
 /* tagging */
-static const char *tags[] = { "::", "::", "::", "::"};
+static const char *tags[] = { "", "", "", ""};
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -112,7 +114,6 @@ static Key keys[] = {
 	{ 0,						XF86XK_AudioRaiseVolume,          spawn,		   {.v = volumup}},
 	{ 0,						XF86XK_AudioLowerVolume,      spawn,		   {.v = volumdown}},
 	{ 0,						XF86XK_AudioMute,      spawn,		   {.v = mutetoggle}},
-
 	{ Mod1Mask,                       XK_d,  spawn,  {.v = dolphincmd } },
 	{ Mod1Mask,                       XK_g,  togglescratch,  {.v = scratchpadcmd } },
 	{ Mod1Mask,                       XK_f,  spawn,  {.v = firefoxcmd } },
